@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NewspaperFormatter.Models.Interfaces;
+using System.Collections.Generic;
 
 namespace NewspaperFormatter.Models.Concrete
 {
@@ -19,7 +20,7 @@ namespace NewspaperFormatter.Models.Concrete
         public int ColumnSpacing { get { return _columnSpacing; } set { _columnSpacing = value; } }
         public NewspaperProperties.ReadabilityLevel readabilityLevel { get { return _readabilityLevel; } set { _readabilityLevel = value; } }
 
-        public Page(Content content, NewspaperProperties newspaperProperties)
+        public Page(Content content, NewspaperProperties newspaperProperties, IFormatter formatter)
         {
             NoOfCols = newspaperProperties.NoOfCols;
             NoOfRows = newspaperProperties.NoOfRows;
@@ -30,25 +31,9 @@ namespace NewspaperFormatter.Models.Concrete
             Columns = new List<Column>();
             for (int i = 0; i < NoOfCols; i++)
             {
-                Column column = new Column(content, newspaperProperties);
+                Column column = new Column(content, newspaperProperties, formatter);
                 Columns.Add(column);
             }
         }
-        // public void printPage(IFileWriter fileWriter)
-        // {
-        //     fileWriter.writeLine("");
-        //     for (int i = 0; i < NoOfRows; i++)
-        //     {
-        //         fileWriter.write("   ");
-        //         for (int j = 0; j < NoOfCols; j++)
-        //         {
-        //             fileWriter.write(Columns[j].Rows[i] + "   ");
-        //         }
-        //         fileWriter.writeLine("");
-        //     }
-        //     String pageBreak = "";
-        //     pageBreak = pageBreak.PadRight(WidthOfPage, '-');
-        //     fileWriter.writeLine("\n" + pageBreak);
-        // }
     }
 }

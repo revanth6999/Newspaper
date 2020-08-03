@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewspaperFormatter.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 namespace NewspaperFormatter.Models.Concrete
 {
@@ -16,7 +17,7 @@ namespace NewspaperFormatter.Models.Concrete
         public int WidthOfPage { get { return _widthOfPage; } set { _widthOfPage = value; } }
         public int NoOfPages { get { return _noOfPages; } set { _noOfPages = value; } }
         public NewspaperProperties.ReadabilityLevel readabilityLevel { get { return _readabilityLevel; } set { _readabilityLevel = value; } }
-        public Newspaper(Content content, NewspaperProperties newspaperProperties)
+        public Newspaper(Content content, NewspaperProperties newspaperProperties, IFormatter formatter)
         {
             try
             {
@@ -28,7 +29,7 @@ namespace NewspaperFormatter.Models.Concrete
                 while (!content.isEmpty())
                 {
                     NoOfPages++;
-                    Page page = new Page(content, newspaperProperties);
+                    Page page = new Page(content, newspaperProperties, formatter);
                     Pages.Add(page);
                 }
             }
@@ -37,12 +38,5 @@ namespace NewspaperFormatter.Models.Concrete
                 throw new Exception("Newspaper with the given dimensions cannot be created.");
             }
         }
-        //public void printNewspaper(IFileWriter fileWriter)
-        //{
-        //    for (int i = 0; i < Pages.Count; i++)
-        //    {
-        //        Pages[i].printPage(fileWriter);
-        //    }
-        //}
     }
 }
