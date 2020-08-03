@@ -1,9 +1,11 @@
 ﻿using NewspaperFormatter.Models.Concrete;
+using NewspaperFormatter.Models.Interfaces;
 using System;
 using System.Collections.Generic;
+
 namespace NewspaperFormatter.Models.Services
 {
-    class RowsFormatter
+    class RowsFormatter : IFormatter
     {
         public List<String> format(Content content, NewspaperProperties newspaperProperties)
         {
@@ -103,6 +105,7 @@ namespace NewspaperFormatter.Models.Services
                 }
                 rows.Add(text);
             }
+
             return rows;
         }
     }
