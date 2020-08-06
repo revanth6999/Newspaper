@@ -13,7 +13,7 @@ The first API accepts the following:
       - High (1), Medium (2) and Low (3)
       
       
-![](Snap1.PNG)
+![](Snap1.png)
 
 The first API assumes the following default inputs:\
   a) Number of columns in a page    - 3\
@@ -34,6 +34,6 @@ The first API assumes the following default inputs:\
   d) Inter column spacing (in characters  - columnSpacing\
   e) Readability level                    - readability Level
 
-![](snap3.png)
+![](snap3.PNG)
 
 
