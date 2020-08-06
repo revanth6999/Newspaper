@@ -11,13 +11,16 @@ The first API accepts the following:
   d) Inter column spacing (in characters\
   e) Readability level (Higher the readability level, lower will be the breakage of larger words and uses more paper)\
       - High (1), Medium (2) and Low (3)
+      
+      
+![](snap1.png)
 
 The first API assumes the following default inputs:\
   a) Number of columns in a page    - 3\
   b) Number of rows in each column  - 20 \
   c) Width of the page              - 80 characters\
   d) Inter column spacing           - 3 characters\
-  e) Readability level              - Medium
+  e) Readability level              - Medium  
   
  The first API after converting the plain text into a formatted object of type Newspaper is serialized and passed to the second API.
  
@@ -30,3 +33,7 @@ The first API assumes the following default inputs:\
   c) Width of the page (in characters)    - widthOfPage\
   d) Inter column spacing (in characters  - columnSpacing\
   e) Readability level                    - readability Level
+
+![](snap3.png)
+
+
