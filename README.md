@@ -13,7 +13,7 @@ The first API accepts the following:
       - High (1), Medium (2) and Low (3)
       
       
-![](snap1.png)
+![](Snap1.PNG)
 
 The first API assumes the following default inputs:\
   a) Number of columns in a page    - 3\
